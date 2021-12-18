@@ -8,7 +8,7 @@
 
 ### 任务一
 
-编写 MapReduce 程序，统计每个⼯工作领域 industry 的⽹网贷记录的数量量，并按数量量从⼤大到⼩小进⾏行行排序。 输出格式:
+编写 MapReduce 程序，统计每个工作领域 industry 的网贷记录的数量，并按数量从⼤到⼩进行排序。 输出格式:
 
 ```
 <工作领域> <记录数量> 
@@ -84,13 +84,13 @@ public static class SortReducer extends Reducer<Text, IntWritable,Text,IntWritab
 
 ## 任务二
 
-编写 Spark 程序，统计⽹网络信⽤用贷产品记录数据中所有⽤用户的贷款⾦金金额 total_loan 的分布情况。 以 1000 元为区间进⾏行行输出。输出格式示例例:
+编写 Spark 程序，统计网络信用贷产品记录数据中所有用户的贷款金额 total_loan 的分布情况。 以 1000 元为区间进⾏输出。输出格式示例:
 
 ```shell
 ((2000,3000),1234)
 ```
 
-### \解决方案
+### 解决方案
 
 使用PySpark，用语句“pip3 install pyspark”或者"pip install pyspark"安装PySpark。
 
@@ -122,9 +122,9 @@ for key in range(len(rdd[0]) -1 ):
 
 ## 任务三
 
-基于 Hive 或者 Spark SQL 对⽹网络信⽤用贷产品记录数据进⾏行行如下统计:
+基于 Hive 或者 Spark SQL 对网络信用贷产品记录数据进行如下统计:
 
-### 1.统计所有⽤用户所在公司类型 employer_type 的数量量分布占⽐比情况。
+### 1.统计所有用户所在公司类型 employer_type 的数量分布占比情况。
 
 输出成 CSV 格式的⽂文件，输出内容格式为:
 
@@ -156,7 +156,7 @@ for i in range(len(result)):
 
 <img src="/Users/shengqichen/Library/Application Support/typora-user-images/image-20211218161559988.png" alt="image-20211218161559988" style="zoom:50%;" />
 
-### 2.统计每个⽤用户最终须缴纳的利利息⾦金金额：
+### 2.统计每个用户最终须缴纳的利息金额：
 
 ​	$total\_money=year\_of\_loan\times monthly\_payment\times 12 - total\_loan$
 
@@ -185,7 +185,7 @@ pandas_interest.to_csv('result_3_2.csv',index=0)
 
 <img src="/Users/shengqichen/Library/Application Support/typora-user-images/image-20211218161754478.png" alt="image-20211218161754478" style="zoom:50%;" />
 
-### 3.统计工作年限 work_year 超过 5 年的用户的房贷情况 censor_status 的数量、量分布占比情况。
+### 3.统计工作年限 work_year 超过 5 年的用户的房贷情况 censor_status 的数量分布占比情况。
 
 输出成 CSV 格式的文件，输出内容格式为:
 
