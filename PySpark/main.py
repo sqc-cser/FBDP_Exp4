@@ -78,7 +78,7 @@ if __name__ == '__main__':
     df_spark = spark.read.option('header', 'true').csv('train_data.csv', inferSchema=True)  # 原数据
     # df_spark = spark.read.option('header', 'true').csv('train_data_smote.csv', inferSchema=True)  # smote采样后数据
     # df_spark = spark.read.option('header', 'true').csv('train_data_under.csv', inferSchema=True)  # 欠采样后数据
-    '''
+    
     df_loan = df_spark.select('total_loan')
     pandas_loan = df_loan.toPandas()
     # 方法1 binning
@@ -127,7 +127,7 @@ if __name__ == '__main__':
                            & ~(df_wk['work_year'] == '< 1 year'))
     # 存储
     df_wk_f.toPandas().to_csv('result_3_3.csv',index=0)
-    '''
+    
     # 题目四
     # 将类别变量变化
     # 随机森林方法: https://blog.csdn.net/weixin_43790705/article/details/108653416
